@@ -1,12 +1,12 @@
 const background = document.querySelector(".widget");
-const codeColor = document.querySelector(".color");
+
 const btnChangeColor = document.querySelector(".change-color");
 
-btnChangeColor.addEventListener("click", handleClickChange);
+background.addEventListener("click", handleClickChange);
 
 function handleClickChange(event) {
-  codeColor.textContent = getRandomHexColor();
   background.style.backgroundColor = getRandomHexColor();
+  btnChangeColor.textContent = background.style.backgroundColor;
 }
 
 function getRandomHexColor() {
