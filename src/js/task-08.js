@@ -7,9 +7,16 @@ function handleSubmit(event) {
   const {
     elements: { email, password },
   } = event.currentTarget;
+
   if (email.value === "" || password.value === "") {
     alert("Заповніть усі рядки");
+    return;
+  } else {
+    const formData = {
+      email: email.value,
+      password: password.value,
+    };
+    console.log(formData);
+    event.currentTarget.reset();
   }
-  console.log(`Email: ${email.value} Password: ${password.value}`);
-  event.currentTarget.reset();
 }
